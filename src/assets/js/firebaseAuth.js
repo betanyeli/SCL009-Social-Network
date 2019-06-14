@@ -1,5 +1,6 @@
 import { templateLogin, userInvalid, emailVerify } from "../views/templateLogin.js";
-import { templateProject } from "../views/templateProject.js";
+//import { readNameDB } from '../js/firebasePost.js';
+//import { templateProject } from "../views/templateProject.js";
 
 
 //export let name, email;
@@ -150,8 +151,8 @@ saveUsers(name, email, uid);
 }
 
 //Observer
-export const observer = () => {
-
+export const observer = (callback) => {
+  
   firebase.auth().onAuthStateChanged(user => {
    //let user = firebase.auth().currentUser;
     if (user === null) {
@@ -161,10 +162,12 @@ export const observer = () => {
       // User is signed in.
     } if (!user.emailVerified) {
       return window.location.hash = "";
-    } 
+    } if (callback) {
+      callback();
+    }
     
     else {
-  
+      
   window.location.hash = "#/project";
       //emailVerify(emailVerified)
       // User is signed out.
