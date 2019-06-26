@@ -59,9 +59,3 @@ showUserNameInProject(nameUser);
 
 }
 
-
-
-
-
-
-

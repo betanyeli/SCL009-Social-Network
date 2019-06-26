@@ -4,10 +4,11 @@ import { templateRegister } from './assets/views/templateRegister.js';
 import { templateLogin } from './assets/views/templateLogin.js';
 import { templateForgotPassword } from './assets/views/templateForgotPassword.js';
 import { templateProject } from './assets/views/templateProject.js';
+import { templateSOS } from './assets/views/templateSOS.js';
 
 
 export const changeRoute = (hash) => {
-  if (hash === '#/register' || hash === '#/project' || hash === '#/login' || hash === '#/forgotpassword'|| hash === '' || hash === '#/' || hash === '/#') {
+  if (hash === '#/register' || hash === '#/project' || hash === '#/login' || hash === '#/forgotpassword'||hash === '#/sos' || hash === '' || hash === '#/' || hash === '/#') {
     return showTemplate(hash)
   }
   return showTemplate(hash)
@@ -34,6 +35,9 @@ const showTemplate = (hash) => {
     case 'forgotpassword':
       templateForgotPassword();
     break;
+    case 'sos':
+      templateSOS();
+      break;
     case '':
       templateLogin();
       break;

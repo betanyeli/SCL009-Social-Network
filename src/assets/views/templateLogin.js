@@ -3,7 +3,7 @@ import { templateForgotPassword } from './templateForgotPassword.js'; //registro
 import { validateLogin } from '../js/validate/validateLogin.js'; // const validate
 import { login } from '../js/firebaseAuth.js';
 import { googleAuth } from '../js/firebaseAuth.js';
-;
+import { readNameDB } from '../js/firebasePost.js';
 
 
 
@@ -24,8 +24,8 @@ export const templateLogin = () => {
           <p id="error-message"></p>
           <input class="form" type="text" id="email2" name="email" placeholder="Ingresa tu correo" required>
           <input class="form" type="password" id="password2" name="password" placeholder="Ingresa tu contraseña" required>
-          <button class="btn-login" id="sign-in" type="submit">INICIAR SESIÓN</button>
-          <button class="btn-google" id="btn-google"><img class= "icon" src="./assets/img/btn-google.png">Inicia sesión con Google</button>
+          <button class="btn-login" id="sign-in" type="submit">Iniciar Sesión</button>
+          <button class="btn-google" id="btn-google"><img class= "icon" src="./assets/img/btn-google.png"><span>Inicia sesión con Google</span></button>
       </div>
       <div class="footer-login">
           <a id="btn-reset">¿Olvidaste tu contraseña?</a>
@@ -57,7 +57,9 @@ document.getElementById('password2').value='';
 
 } 
  else {
+  
   login(mailValue, passValue);
+readNameDB();
 
   }
 });
