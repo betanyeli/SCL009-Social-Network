@@ -1,6 +1,6 @@
 import { templateLogin, userInvalid, emailVerify } from "../views/templateLogin.js";
-//import { readNameDB } from '../js/firebasePost.js';
-//import { templateProject } from "../views/templateProject.js";
+// import { templateProject } from "../views/templateProject.js";
+// import { readNameDB } from '../js/firebasePost.js';
 
 
 //export let name, email;
@@ -53,13 +53,16 @@ export const register = (name, email, password) => {
 export const login = (mail, pass) => {
   firebase.auth().signInWithEmailAndPassword(mail, pass)
     .then(() => {
-     observer();
+     //observer();
       let user = firebase.auth().currentUser;
 
       if (user.emailVerified) {
+        window.location.hash = '#/project';
+      
+      
       console.log(user.emailVerified)
       //templateProject();
-      window.location.hash = '#/project';
+      
         
       }
       else {
@@ -152,7 +155,6 @@ saveUsers(name, email, uid);
 
 //Observer
 export const observer = (callback) => {
-  
   firebase.auth().onAuthStateChanged(user => {
    //let user = firebase.auth().currentUser;
     if (user === null) {
@@ -167,10 +169,11 @@ export const observer = (callback) => {
     }
     
     else {
-      
+     
   window.location.hash = "#/project";
+  
       //emailVerify(emailVerified)
-      // User is signed out.
+     
       
     }
   });

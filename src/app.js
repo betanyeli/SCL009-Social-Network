@@ -1,6 +1,6 @@
 import { initRouter } from './route.js';
 //import { observer } from './assets/js/firebaseAuth.js';
-
+import { readNameDB } from './assets/js/firebasePost.js';
 export const firebaseInit = () => {
   // Initialize Firebase
   // Your web app's Firebase configuration
@@ -14,6 +14,7 @@ export const firebaseInit = () => {
     appId: "1:108376578479:web:da6682d105a33503"
   };
   firebase.initializeApp(firebaseConfig);
+ 
   
 // Initialize Cloud Firestore through Firebase
 //let db = firebase.firestore();

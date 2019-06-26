@@ -2,7 +2,7 @@ import { templateLogin } from './templateLogin.js';
 import { resetPassword } from '../js/firebaseAuth.js'; // const reset password
 import { validateForgotPassword } from '../js/validate/validateForgotPassword.js';
 import { validateMail } from '../js/validate/validateRegister.js'; // const validate
-
+;
 
 
 

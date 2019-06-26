@@ -1,25 +1,26 @@
-import { readNameDB, readPosts } from '../js/firebasePost.js';
-//import { nameUser } from '../js/firebasePost.js';
 import { observer } from '../js/firebaseAuth.js';
-import { signOut } from '../js/firebaseAuth.js';
-import { createPost } from '../js/firebasePost.js';
+import { createPost, readNameDB } from '../js/firebasePost.js';
 import { templateLogin } from './templateLogin.js';
+import { signOut } from '../js/firebaseAuth.js';
  
 
+export const showUserNameInProject = (nameUser) => {
+
+  document.getElementById('welcome').innerHTML = "Bienvenido " + nameUser;
+}
 
 export const templateProject = () => {
+ 
+  
+  observer();
 
-  
-   observer();
-  
+  readNameDB();
    
-readNameDB();
 
   
   document.getElementById('root').innerHTML = `<p>Template Project</p>
   
-  <p id="welcome">Hola  </p>
-  <p id="ur-welcome"></p>
+  <p id="welcome"></p>
                                               
   
   <textarea name="post" id="post" cols="30" rows="10"></textarea>
@@ -39,9 +40,9 @@ document.getElementById('posting').addEventListener('click', () => {
 createPost(uid, textPost)
 //readPosts(uid, textPost);
 //showPost();
-})
+});
 
-
+ 
   // btn sign out
 document.getElementById('sign-out').addEventListener('click', () => {
 
@@ -50,6 +51,8 @@ signOut();
 templateLogin();
 window.location.hash = '#/login';
   });
+
+
 
 }
 

@@ -15,8 +15,8 @@ La planificación de esta red social se dividió en tres springs de una semana c
 ![Prototipo de baja fidelidad](src/assets/img/PBF1.jpg) 
 
 **Test usabilidad**
-[user 1]
-[user 2]
+![Sra Paulina testeando NMC!](https://www.loom.com/share/0447047c16924ac1a8cb4d9a03b12639)
+![Daniuska Casanova testeando NMC!](https://www.youtube.com/watch?v=l4mcNirWCI0&feature=youtu.be)
 [user 3]
 
 **Modo de uso**
@@ -71,7 +71,7 @@ Yo como usuario de NoMoreCommunity, QUIERO que la APP me informe si tengo algún
 YO como usuaria loggeada de **NoMoreCommunity** QUIERO poder publicar un post, editarlo o eliminarlo, PARA poder compartir con las demás usuarias de la comunidad.
 
 **Criterios de aceptación**
-- Permitir al usuario redactar un post mediante un input, con opción a publicarlo.
+- Permitir al usuario redactar un post mediante un input, con opción a publicarlo. [Listo en consola firebase]
 - Permitir al usuario editar un post *in place* y republicarlo.
 - Permitir al usuario eliminar un post, previa confirmación con **Alert** . 
 
